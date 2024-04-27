@@ -244,19 +244,19 @@ class OrderBook {
 			if (!orders_.contains(orderId))
 				return;
 
-			const auto& [order, orderIterator] = orders_.at(orderId);
+			const auto [order, iterator] = orders_.at(orderId);
 			orders_.erase(orderId);
 
 			if (order->GetSide() == Side::Sell) {
 				auto price = order->GetPrice();
 				auto& orders = asks_.at(price);
-				orders.erase(orderIterator);
+				orders.erase(iterator);
 				if (orders.empty())
 					asks_.erase(price);
 			} else {
 				auto price = order->GetPrice();
 				auto& orders = bids_.at(price);
-				orders.erase(orderIterator);
+				orders.erase(iterator);
 				if (orders.empty()) 
 					bids_.erase(price);
 			}
