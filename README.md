@@ -9,5 +9,5 @@
 
 ## Roadmap
 1. [x] Refactor `main.cpp` into header files
-2. [ ] Add additionally order type e.g. good for day, fill or kill and market order
+2. [ ] Add additional order types e.g. good for day, fill or kill and market order
 3. [ ] Add testing framework 
